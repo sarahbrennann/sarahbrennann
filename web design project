@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	
+	<title>web design project</title>
+		<style>
+		h1 {
+		background-color: dodgerblue;
+		}
+		</style>
+			<script type="text/javascript">
+				function prompt() {
+					var txt;
+					var firstname= prompt("First Name:");
+					if (first name==null || firstname==" "){
+						documwnt.write="enter valid name" ; }
+					else {
+						document.write="hello" + firstname ;
+					}
+					
+				}
+			</script>
+</head>
+
+<body>
+	<h1><center>Money management for students</center></h1>
+		<input type="button" value="register here" name="registration button" onclick="prompt()" />
+		
+	
+	
+</body>
+</html>
