@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+  
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+
+  
+
+<head> 
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" /> 
+
+     
+
+    <title>Money management</title> 
+
+  <script>  
+
+  
+
+function myFunction() {  
+
+  
+
+  var x = document.getElementById("myEmail").pattern;  
+
+  
+
+  document.getElementById("demo").innerHTML = x;  
+
+  
+
+}  
+
+  
+
+</script>  
+
+         
+
+    <link href="../../Money management project (2nd december)/css/project.css" rel="stylesheet" type="text/css" /> 
+
+</head> 
+
+  
+
+<body> 
+
+  
+
+<!-- Money management for students on left and tool bar in right corner--> 
+
+        <ul> 
+
+        <li><a href="../index.html">Money Management for Students</a></li> 
+
+        <li><a href="../Money management project (2nd december)/html/reigister.html"/>Register</li> 
+
+        <li><a href="../../Money management project (2nd december)/html/about.html">About</a></li> 
+
+        <li><a href="../../Money management project (2nd december)/html/faq.html">FAQ's</a></li> 
+
+        <li><a href="../../Money management project (2nd december)/html/questions.html">Questionaire</a></li> 
+
+        <li><a href="../../Money management project (2nd december)/html/studentdiscount.html">Student Discounts</a></li> 
+
+         
+
+    </ul> 
+
+     
+
+<!--student discount table with link to pages and information about what is on the sites--> 
+
+  
+
+<br/><br/><br/> 
+
+<center><form name='registration' onSubmit="return formValidation();"> 
+
+  
+
+<!--code for user id - address inputs --> 
+
+<p><input type="password" name="passid" size="12" /></p> 
+
+<p><label for="username">Name:</label></p> 
+
+<p><input type="text" name="username" size="50" /></p> 
+
+<p><label for="passid">Password:</label></p> 
+
+<p><label for="address">Address:</label></p> 
+
+<p><input type="text" name="address" size="50" /></p> 
+
+<!--drop down menu for countries --> 
+
+<p><label for="country">Country:</label></p> 
+
+<p><select name="country"> 
+
+<option selected="" value="Default">(Please select a country)</option> 
+
+<option value="AF">Australia</option> 
+
+<option value="AL">Rest of Europe</option> 
+
+<option value="DZ">UK</option> 
+
+<option value="AS">Ireland</option> 
+
+<option value="AD">USA</option> 
+
+</select></li> 
+
+<!--code for email address--> 
+
+<p><label for="email">Email:</label></p> 
+
+<p><input type="text" name="email" size="50" /></p> 
+
+<!--choose gender--> 
+
+<p><label id="gender">Sex:</label></p> 
+
+<p><input type="radio" name="msex" value="Male" /><span>Male</span></p> 
+
+<p><input type="radio" name="fsex" value="Female" /><span>Female</span></p> 
+
+<!--user inputs text--> 
+
+<p><label for="desc">About:</label></p> 
+
+<p><textarea name="desc" id="desc"></textarea></p> 
+
+<!--submit the form--> 
+
+<p><input type="submit" name="submit" value="Submit" /></p> 
+
+</center> 
+
+  
+
+  
+
+<!--validation for email-->  
+
+  
+
+      
+
+  
+
+<button onclick="myFunction()">Try it</button> 
+
+  
+
+   
+
+  
+
+<p id="demo"></p>  
+
+  
+
+  
+
+  
+
+<script>  
+
+  
+
+  
+
+<script> 
+
+function formValidation() 
+
+{ 
+
+var uid = document.registration.userid; 
+
+var passid = document.registration.passid; 
+
+var uname = document.registration.username; 
+
+var uadd = document.registration.address; 
+
+var ucountry = document.registration.country; 
+
+var uzip = document.registration.zip; 
+
+var uemail = document.registration.email; 
+
+var umsex = document.registration.msex; 
+
+var ufsex = document.registration.fsex; if(userid_validation(uid,5,12)) 
+
+{ 
+
+if(passid_validation(passid,7,12)) 
+
+{ 
+
+if(allLetter(uname)) 
+
+{ 
+
+if(alphanumeric(uadd)) 
+
+{ 
+
+if(countryselect(ucountry)) 
+
+{ 
+
+if(allnumeric(uzip)) 
+
+{ 
+
+if(ValidateEmail(uemail)) 
+
+{ 
+
+if(validsex(umsex,ufsex)) 
+
+{ 
+
+} 
+
+} 
+
+} 
+
+} 
+
+} 
+
+} 
+
+} 
+
+} 
+
+return false; 
+
+  
+
+} function userid_validation(uid,mx,my) 
+
+{ 
+
+var uid_len = uid.value.length; 
+
+if (uid_len == 0 || uid_len >= my || uid_len < mx) 
+
+{ 
+
+alert("User Id should not be empty / length be between "+mx+" to "+my); 
+
+uid.focus(); 
+
+return false; 
+
+} 
+
+return true; 
+
+} 
+
+function passid_validation(passid,mx,my) 
+
+{ 
+
+var passid_len = passid.value.length; 
+
+if (passid_len == 0 ||passid_len >= my || passid_len < mx) 
+
+{ 
+
+alert("Password should not be empty / length be between "+mx+" to "+my); 
+
+passid.focus(); 
+
+return false; 
+
+} 
+
+return true; 
+
+} 
+
+function allLetter(uname) 
+
+{ 
+
+var letters = /^[A-Za-z]+$/; 
+
+if(uname.value.match(letters)) 
+
+{ 
+
+return true; 
+
+} 
+
+else 
+
+{ 
+
+alert('Username must have alphabet characters only'); 
+
+uname.focus(); 
+
+return false; 
+
+} 
+
+} 
+
+function alphanumeric(uadd) 
+
+{ 
+
+var letters = /^[0-9a-zA-Z]+$/; 
+
+if(uadd.value.match(letters)) 
+
+{ 
+
+return true; 
+
+} 
+
+else 
+
+{ 
+
+alert('User address must have alphanumeric characters only'); 
+
+uadd.focus(); 
+
+return false; 
+
+} 
+
+} 
+
+function countryselect(ucountry) 
+
+{ 
+
+if(ucountry.value == "Default") 
+
+{ 
+
+alert('Select your country from the list'); 
+
+ucountry.focus(); 
+
+return false; 
+
+} 
+
+else 
+
+{ 
+
+return true; 
+
+} 
+
+} 
+
+function allnumeric(uzip) 
+
+{ 
+
+var numbers = /^[0-9]+$/; 
+
+if(uzip.value.match(numbers)) 
+
+{ 
+
+return true; 
+
+} 
+
+else 
+
+{ 
+
+alert('ZIP code must have numeric characters only'); 
+
+uzip.focus(); 
+
+return false; 
+
+} 
+
+} 
+
+function ValidateEmail(uemail) 
+
+{ 
+
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+
+if(uemail.value.match(mailformat)) 
+
+{ 
+
+return true; 
+
+} 
+
+else 
+
+{ 
+
+alert("You have entered an invalid email address!"); 
+
+uemail.focus(); 
+
+return false; 
+
+} 
+
+} function validsex(umsex,ufsex) 
+
+{ 
+
+x=0; 
+
+  
+
+if(umsex.checked) 
+
+{ 
+
+x++; 
+
+} if(ufsex.checked) 
+
+{ 
+
+x++; 
+
+} 
+
+if(x==0) 
+
+{ 
+
+alert('Select Male/Female'); 
+
+umsex.focus(); 
+
+return false; 
+
+} 
+
+else 
+
+{ 
+
+alert('Form Succesfully Submitted'); 
+
+window.location.reload() 
+
+return true; 
+
+} 
+
+} 
+
+</script> 
+
+</ul> 
+
+</form> 
+
+  
+
+  
+
+  
+
+  
+
+</body> 
+
+</html> 
